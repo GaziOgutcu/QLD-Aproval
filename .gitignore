@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+backend/temp/
+
+# JavaScript
+node_modules/
+npm-debug.log
+yarn-error.log
+frontend/build/*
+!frontend/build/index.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
