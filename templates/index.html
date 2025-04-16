@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLD Shed & Patio Approval Checker</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <h1>QLD Shed & Patio Approval Checker</h1>
+            <p>Check council requirements for your building project in Queensland</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Check Building Approval Requirements</h2>
+            
+            <div class="form-group">
+                <label for="address">Property Address</label>
+                <input type="text" id="address" class="address-input" placeholder="Enter Queensland property address">
+                <small>Enter a complete QLD address (e.g., 123 Main St, Brisbane QLD 4000)</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="structure-type">Structure Type</label>
+                <select id="structure-type" class="structure-selector">
+                    <option value="">Select structure type</option>
+                    <option value="shed">Shed</option>
+                    <option value="patio">Patio</option>
+                    <option value="carport">Carport</option>
+                    <option value="granny_flat">Granny Flat</option>
+                </select>
+            </div>
+            
+            <div class="form-actions">
+                <button id="check-btn" class="primary-button">Check Requirements</button>
+            </div>
+            
+            <div id="error-message" class="error-message" style="display: none;"></div>
+        </div>
+        
+        <div id="results" class="results-container" style="display: none;">
+            <div class="results-header">
+                <h2>Approval Requirements</h2>
+                <button id="download-pdf" class="secondary-button">Download PDF</button>
+            </div>
+            
+            <div id="results-content"></div>
+        </div>
+    </div>
+    
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p>© <span id="current-year"></span> QLD Shed & Patio Approval Checker</p>
+            <p>Disclaimer: This tool provides general guidance only. Always consult with your local council for official requirements.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

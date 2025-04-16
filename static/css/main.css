@@ -1,0 +1,239 @@
+/* Main App Styles */
+:root {
+    --primary-color: #0052cc;
+    --secondary-color: #00875a;
+    --background-color: #f4f5f7;
+    --text-color: #172b4d;
+    --border-color: #dfe1e6;
+    --error-color: #de350b;
+    --success-color: #00875a;
+    --warning-color: #ff991f;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+  }
+  
+  /* Header Styles */
+  .app-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .header-content p {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  /* Form Styles */
+  .form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .form-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .form-group small {
+    display: block;
+    color: #6b778c;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .form-actions {
+    margin-top: 2rem;
+  }
+  
+  /* Button Styles */
+  .primary-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .primary-button:hover {
+    background-color: #0747a6;
+  }
+  
+  .primary-button:disabled {
+    background-color: #b3d4ff;
+    cursor: not-allowed;
+  }
+  
+  .secondary-button {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .secondary-button:hover {
+    background-color: #f0f5ff;
+  }
+  
+  /* Results Styles */
+  .results-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .results-header h2 {
+    color: var(--primary-color);
+    margin: 0;
+  }
+  
+  .property-info,
+  .overlays-info,
+  .requirements-info,
+  .next-steps {
+    margin-bottom: 2rem;
+  }
+  
+  .property-info h3,
+  .overlays-info h3,
+  .requirements-info h3,
+  .next-steps h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+  
+  .overlays-info ul,
+  .requirements-info ul {
+    list-style-type: none;
+  }
+  
+  .overlays-info li,
+  .requirements-info li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .requirements-info li strong {
+    font-weight: 600;
+    display: inline-block;
+    min-width: 180px;
+  }
+  
+  .requirements-info li small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #6b778c;
+    font-size: 0.9rem;
+  }
+  
+  /* Error Message */
+  .error-message {
+    background-color: #ffebe6;
+    color: var(--error-color);
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    border-left: 4px solid var(--error-color);
+  }
+  
+  /* Footer Styles */
+  .app-footer {
+    background-color: #172b4d;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .footer-content p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .form-container,
+    .results-container {
+      padding: 1.5rem;
+    }
+    
+    .results-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }

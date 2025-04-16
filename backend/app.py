@@ -5,9 +5,16 @@ from datetime import datetime
 import pdfkit
 from werkzeug.middleware.proxy_fix import ProxyFix
 
+# Get the absolute path to the project root
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Define temp directory for PDF files
+TEMP_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'temp')
+os.makedirs(TEMP_DIR, exist_ok=True)
+
 app = Flask(__name__, 
-            static_folder="./frontend/build/static", 
-            template_folder="./frontend/build")
+            static_folder=os.path.join(BASE_DIR, "static"),
+            template_folder=os.path.join(BASE_DIR, "templates"))
 
 # Apply the proxy fix for proper handling of scheme and host when behind a proxy
 app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
@@ -104,10 +111,7 @@ def generate_pdf():
         
         # Create PDF filename
         filename = f"QLD-Approval-Check-{structure_type}-{datetime.now().strftime('%Y%m%d%H%M%S')}.pdf"
-        pdf_path = os.path.join(app.root_path, 'temp', filename)
-        
-        # Ensure temp directory exists
-        os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
+        pdf_path = os.path.join(TEMP_DIR, filename)
         
         # Generate PDF file
         pdfkit.from_string(rendered_html, pdf_path)

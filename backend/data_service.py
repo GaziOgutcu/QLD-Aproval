@@ -89,7 +89,7 @@ def get_approval_requirements(zone, overlays, structure_type):
         requirements[0]['required'] = True
         requirements[0]['note'] = "Secondary dwellings typically require development approval in QLD."
     elif structure_type == 'shed' and 'RU' in zone:
-        if dummy_size > 100:  # Fixed: Using a variable for size comparison
+        if dummy_size > 100:  # Using a variable for size comparison
             requirements[0]['required'] = True
             requirements[0]['note'] = "Large sheds in rural zones may require development approval."
     elif active_overlays:
@@ -97,7 +97,7 @@ def get_approval_requirements(zone, overlays, structure_type):
         requirements[0]['note'] = f"Required due to {', '.join([o['name'] for o in active_overlays])} overlays."
     
     # Logic for Building Approval
-    if structure_type in ['shed', 'patio', 'carport'] and dummy_size > 10:  # Fixed: Using a variable
+    if structure_type in ['shed', 'patio', 'carport'] and dummy_size > 10:  # Using a variable
         requirements[1]['required'] = True
         requirements[1]['note'] = "Required for structures over 10 square meters."
     elif structure_type == 'granny_flat':
@@ -110,7 +110,7 @@ def get_approval_requirements(zone, overlays, structure_type):
         requirements[2]['note'] = "Required for any structure with water or sewer connections."
     
     # Logic for Engineering Certificate
-    if structure_type in ['shed', 'patio', 'carport'] and dummy_size > 20:  # Fixed: Using a variable
+    if structure_type in ['shed', 'patio', 'carport'] and dummy_size > 20:  # Using a variable
         requirements[3]['required'] = True
         requirements[3]['note'] = "Required for larger structures to ensure structural integrity."
     elif any(overlay['name'] in ['Flood Hazard', 'Landslide Hazard'] and overlay['active'] for overlay in overlays):
